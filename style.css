@@ -1,0 +1,144 @@
+.header {
+  background-color: 255,255,255,;
+  padding: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.0.80);
+}
+
+.navbar-brand {
+  width: 50px;
+  height: 50px;
+  border: 2px solid black;
+  border-radius:50%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.navbar-toggler-icon{
+  width:15px;
+  height:20px ;
+}
+
+  
+.contact-btn {
+  border-radius: 20px;
+  padding: 6px 17px;
+  font-weight: 500;
+}
+/* Maintain height for mobile */
+.carousel-item img {
+  object-fit: cover;
+  height: 100vh; /* full screen height */
+}
+
+@media (min-width: 768px) {
+  .carousel-item img {
+    height: 600px; /* fixed height for tablet and up */
+  }
+}
+
+.carousel-item{
+ width:100%;
+}
+
+.carousel-inner{
+  width: 100%;
+}
+
+.inquire-btn {
+  background-color:#198754; /* Green */
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 30px;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.inquire-btn:hover {
+  background-color: #198754; 
+}
+shadow-sm {
+    box-shadow: rgba(0, 0, 0, 0.075) 0px 0.125rem 0.25rem !important;
+}
+.parent{
+  display:flex;
+  justify-content:space-around;
+}
+.parent {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .parent .item,
+  .parent .item1,
+  .parent .item2 {
+    flex: 1 1 250px;
+    max-width: 300px;
+    text-align: center;
+    padding: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    background-color: #fff;
+  }
+
+  .parent img {
+    margin-bottom: 10px;
+  }
+
+  .parent h2 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #333;
+  }
+
+  .parent p {
+    font-size: 0.95rem;
+    color: #555;
+  }
+
+  /* Mobile responsive */
+  @media (max-width: 768px) {
+    .parent {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  .navbar-nav{
+    gap:20px;
+  }
+  .div{
+    height: 500px;
+    width:100%;
+    background-color:#f8f9fa;
+  }
+
+   .footer {
+      background-color: #f8f9fa; 
+      padding: 40px 20px;
+    }
+
+    .footer h3, footer h4 {
+      margin: 5px 0;
+    }
+  .footer-logo {
+      width: 100px;
+      height: 100px;
+      border-radius: 25px;
+      object-fit: cover;
+      margin-bottom: 35px;
+    }
+  
+   .custom-button {
+    border-radius: 30px;
+    padding: 10px 0;
+    background-color: #198754;
+  }
+  .inquire{
+  margin-top: 20px; 
+}
+
