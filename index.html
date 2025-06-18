@@ -29,45 +29,94 @@
       height: 600px; /* For desktop and large screens */
     }
   }
-</style>
+  .box-custom {
+    width: 100%;
+  }
 
+  @media (min-width: 992px) {
+    .box-custom {
+      width: 33.3333%;
+    }
+  }
+.navbar-toggler:focus,
+  .navbar-toggler:active,
+  .navbar-toggler:focus-visible {
+    box-shadow: none !important;
+    outline: none !important;
+    background-color: transparent !important;
+    border-color: transparent !important;
+  }
+
+  /* Optional: remove hover background too */
+  .navbar-toggler:hover {
+    background-color: transparent !important;
+  }
+
+</style>
+  
 </head>
 <body>
-  <div class="header">
-    <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top sha">
-      <div class="container-fluid px-3">
-        <a href="#">
-          <img class="navbar-brand" src="./photo/cabriot.png" width="200px" height="190px">
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
-aria-controls="offcanvasNavbar" aria-label="Toggle navigation"> 
-<span style="font-weight:400px; font-size:14px;">Menu</span>
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-          <div class="offcanvas-header">
+  <!-- Header Start -->
+<div class="header">
+  <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top sha">
+    <div class="container-fluid px-3">
+      <!-- Logo -->
+      <a href="#">
+        <img class="navbar-brand" src="./photo/cabriot.png" width="200px" height="190px">
+      </a>
+      <!-- Toggle button for mobile -->
+<button class="navbar-toggler d-lg-none" type="button"
+        data-bs-toggle="offcanvas"
+        data-bs-target="#offcanvasTop"
+        aria-controls="offcanvasTop"
+        style="border: none; outline: none; box-shadow: none; background-color: transparent;">
+  <span style="font-weight:400; font-size:14px;">Menu</span>
+  <span class="navbar-toggler-icon"></span>
+</button>
 
-            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-          </div>
-          <div class="offcanvas-body">
-            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3 ms-auto">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Eat</a>
-              </li>
-              <li class="nav-item">
-                <a class="btn btn-success contact-btn" href="#">
-                  <i class="fa-regular fa-comment-dots"></i> Contact
-                </a>
-              </li>
-            </ul>
-          </div>
+      <!-- Offcanvas for Mobile View -->
+      <div class="offcanvas offcanvas-top d-lg-none" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel">
+        <div class="offcanvas-header">
+          <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body p-0">
+          <ul class="navbar-nav flex-column align-items-start w-100 p-3 gap-2 m-0">
+            <li class="nav-item">
+              <a class="nav-link active text-dark fw-bold" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-dark fw-bold" href="#">Eat</a>
+            </li>
+            <li class="nav-item">
+              <a class="btn btn-success contact-btn fw-bold" href="#">
+                <i class="fa-solid fa-phone-volume"></i> Contact
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
-    </nav>
-  </div>
+
+<!-- Normal Nav for Large Screens (hidden on mobile) -->
+<div class="d-none d-lg-block ms-auto">
+  <ul class="navbar-nav flex-row align-items-center gap-3 px-3" style="padding-right:30px;">
+    <li class="nav-item">
+      <a class="nav-link active text-dark fw-bold" href="#">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link text-dark fw-bold" href="#">Eat</a>
+    </li>
+    <li class="nav-item">
+      <a class="btn btn-success contact-btn fw-bold" href="#">
+        <i class="fa-solid fa-phone-volume"></i> Contact
+      </a>
+    </li>
+  </ul>
+</div>
+    </div>
+  </nav>
+</div>
+<!-- Header End-->
+
   <!-- Slider Wrapper Start -->
 <div id="carouselExampleCaptions" class="carousel slide mb-5" data-bs-ride="carousel">
 
@@ -83,28 +132,29 @@ aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
 
   <!-- Slides -->
   <div class="carousel-inner">
+
     <!-- Slide 1 -->
-    <div class="carousel-item active" data-bs-interval="1500">
-      <img src="./photo/slideR2.jpg" class="d-block w-100 img-fluid rounded-3 shadow" alt="Slide 1">
-      <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-3">
+    <div class="carousel-item active" data-bs-interval="2000">
+      <img src="./photo/slideR2.jpg" class="d-block w-100 carousel-img" alt="Slide 1">
+      <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-2">
         <h5 class="text-warning fw-bold">Fresh & Healthy Meals</h5>
         <p>Start your day with delicious and nutritious food made with love.</p>
       </div>
     </div>
 
     <!-- Slide 2 -->
-    <div class="carousel-item" data-bs-interval="1500">
-      <img src="./photo/slideR3.jpg" class="d-block w-100 img-fluid rounded-3 shadow" alt="Slide 2">
-      <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-3">
+    <div class="carousel-item" data-bs-interval="2000">
+      <img src="./photo/slideR3.jpg" class="d-block w-100 carousel-img" alt="Slide 2">
+      <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-2">
         <h5 class="text-info fw-bold">Tiffin Service Redefined</h5>
         <p>Get eco-friendly and tasty tiffin services at your workplace or home.</p>
       </div>
     </div>
 
     <!-- Slide 3 -->
-    <div class="carousel-item" data-bs-interval="1500">
-      <img src="./photo/slideR4.jpg" class="d-block w-100 img-fluid rounded-3 shadow" alt="Slide 3">
-      <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-3">
+    <div class="carousel-item" data-bs-interval="2000">
+      <img src="./photo/slideR4.jpg" class="d-block w-100 carousel-img" alt="Slide 3">
+      <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-2">
         <h5 class="text-success fw-bold">Quick & Easy Orders</h5>
         <p>Order your personalized meals online in just a few clicks.</p>
       </div>
@@ -121,6 +171,7 @@ aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
     <span class="visually-hidden">Next</span>
   </button>
 </div>
+
 <!-- Slider Wrapper End -->
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
@@ -128,27 +179,25 @@ aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
     crossorigin="anonymous"></script>
 
 <!-- Bulk Corporate Order Section -->
-<section class="masthead-about-cabriot" style="background-color:#fff;">
-  <div class="container px-3 px-sm-4 px-md-5 py-5">
-    <div class="row gx-5 align-items-center flex-column-reverse flex-lg-row">
-
+<section class="masthead-about-cabriot mb-lg-5" style="background-color:#fff; padding-top: 1rem; padding-bottom: 0rem;">
+  <div class="container">
+    <div class="row gx-4 align-items-center flex-column-reverse flex-lg-row text-start">
+      
       <!-- Image Column -->
-      <div class="col-lg-6 d-flex align-items-center mb-4 mb-lg-0 mt-4">
-        <img src="./photo/Corporate-bulk-order.png" alt="Image" class="img-fluid" style="max-width: 100%; height: auto;">
-      </div>
+      <div class="col-lg-6 d-flex justify-content-center align-items-center mb-4 mb-lg-0">
+  <img src="./photo/Corporate-bulk-order.png" alt="Image" class="img-fluid w-100">
+</div>
 
       <!-- Text Column -->
-      <div class="col-lg-6 mt-md-5">
-        <div class="mb-4">
-          <h3 class="fs-1 fw-semibold text-success">Bulk Corporate Order</h3>
-          <p class="text-dark">
-            Tailored to meet corporate dining needs, Cabriot Eat presents a three-time-a-day mess service with a base
-            menu. Our chefs customize the menu based on special requirements, ensuring a personalized dining
-            experience for corporate clients.
-          </p>
-        </div>
-        <!-- Lists -->
-        <div class="d-flex flex-wrap mb-4">
+      <div class="col-lg-6 px-3">
+        <h3 class="fs-1 fw-semibold text-success">Bulk Corporate Order</h3>
+        <p class="text-dark">
+          Tailored to meet corporate dining needs, Cabriot Eat presents a three-time-a-day mess service with a base
+          menu. Our chefs customize the menu based on special requirements, ensuring a personalized dining
+          experience for corporate clients.
+        </p>
+
+        <div class="d-flex flex-wrap mb-3">
           <ul class="me-5 ps-3 mb-0">
             <li>Corporates</li>
             <li>Educational Institutes</li>
@@ -160,123 +209,118 @@ aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
             <li>Hostels & PG</li>
           </ul>
         </div>
-        <!-- Button -->
-        <button class="inquire-btn btn btn-success px-4 py-2 rounded">Inquire</button>
+
+      
+      <div class="d-flex justify-content-center justify-content-lg-end mb-4">
+  <button type="submit" class="btn btn-success custom-button" style="width: 130px;">
+    Inquire
+  </button>
+</div>
+
       </div>
     </div>
   </div>
 </section>
-<!-- Three-Box Section -->
-<section class="masthead-about-cabriot" style="padding-top: 5rem; background-color:#ffffff;">
-  <div class="container px-3 px-sm-4 px-md-5 pb-5">
-    <div class="row gx-4 gy-4 align-items-stretch">
+
+<!-- Bulk Corporate Order Box Section -->
+<section class="masthead-about-cabriot" style="background-color:#ffffff; padding: 2rem 0;">
+  <div class="container">
+
+    <!-- Custom Flex Container -->
+    <div class="d-flex flex-column flex-lg-row justify-content-between align-items-stretch gap-4">
 
       <!-- Box 1 -->
-      <div class="col-12 col-md-6 col-lg-4 d-flex">
-        <div class="p-4 border border-dark rounded shadow-lg text-center bg-white w-100 h-100">
-          <img src="./photo/office lunch.png" alt="Office Lunch" width="85px">
-          <h2 class="mt-3" style="font-size:24px; font-weight:bold;">Office Lunch</h2>
-          <p>Embrace eco-friendly dining with Cabriot Eat’s office lunch in a tiffin box.</p>
-        </div>
+     <div class="box-custom text-center p-4 border border-dark rounded shadow-lg bg-white">
+        <img src="./photo/office lunch.png" alt="Office Lunch" width="85px">
+        <h2 class="mt-3" style="font-size:24px; font-weight:bold;">Office Lunch</h2>
+        <p>Embrace eco-friendly dining with Cabriot Eat’s office lunch in a tiffin box.</p>
       </div>
 
       <!-- Box 2 -->
-      <div class="col-12 col-md-6 col-lg-4 d-flex">
-        <div class="p-4 border border-dark rounded shadow-lg text-center bg-white w-100 h-100">
-          <img src="./photo/Personal Meal Plan.png" alt="Personal Meal Plan" width="85px">
-          <h2 class="mt-3" style="font-size:24px; font-weight:bold;">Personal Meal Plan</h2>
-          <p>Daily, weekly and monthly meal plans with flexible choices in the menu for individuals are provided by Cabriot Eat.</p>
-        </div>
+      <div class="box-custom text-center p-4 border border-dark rounded shadow-lg bg-white">
+        <img src="./photo/Personal Meal Plan.png" alt="Personal Meal Plan" width="85px">
+        <h2 class="mt-3" style="font-size:24px; font-weight:bold;">Personal Meal Plan</h2>
+        <p>Daily, weekly and monthly meal plans with flexible choices in the menu for individuals are provided by Cabriot Eat.</p>
       </div>
 
       <!-- Box 3 -->
-      <div class="col-12 col-md-6 col-lg-4 d-flex">
-        <div class="p-4 border border-dark rounded shadow-lg text-center bg-white w-100 h-100">
-          <img src="./photo/on-the-go choice.png" alt="On-the-go Choices" width="85px">
-          <h2 class="mt-3" style="font-size:24px; font-weight:bold;">On-the-go Choices</h2>
-          <p>Satisfy instant cravings with Cabriot Eat's instant order menu for a quick culinary delight.</p>
-        </div>
+     <div class="box-custom text-center p-4 border border-dark rounded shadow-lg bg-white">
+        <img src="./photo/on-the-go choice.png" alt="On-the-go Choices" width="85px">
+        <h2 class="mt-3" style="font-size:24px; font-weight:bold;">On-the-go Choices</h2>
+        <p>Satisfy instant cravings with Cabriot Eat's instant order menu for a quick culinary delight.</p>
       </div>
+
     </div>
   </div>
 </section>
-  <!-- The Kitchen Section -->
-<section class="masthead-about-cabriot" style="padding-top: 5rem; background-color:#ffffff;">
-  <div class="container px-4 px-md-5">
-    <div class="row gx-5 align-items-center flex-column-reverse flex-lg-row">
 
-      <!-- Text Column -->
+<!-- Kitchen Section -->
+<section class="masthead-about-cabriot" style="padding: 1rem 0; background-color:#ffffff;">
+  <div class="container px-3">
+    <div class="row gx-4 align-items-center flex-column-reverse flex-lg-row text-start">
       <div class="col-lg-6">
-        <div class="mb-5 mt-0">
+        <div class="mb-4 mt-3">
           <h3 style="font-size:30px; font-weight:bold;">The Kitchen</h3>
-          <h3 class="mb-4 fs-1 display-5 fw-semibold text-success">
-            Culinary Craftmanship at Cabriot Kitchen
-          </h3>
-          <p style="color:black; width:80%;">
+          <h3 class="mb-4 fs-1 display-5 fw-semibold text-success">Culinary Craftmanship at Cabriot Kitchen</h3>
+          <p style="color:black; max-width:500px;">
             Feel the heat of culinary excellence with a high-tech kitchen equipped with cutting-edge amenities at
             Cabriot Kitchen. It is the epicenter of innovation by our certified culinary experts who transform your
             meal into a masterpiece to savor.
           </p>
         </div>
       </div>
-
-      <!-- Image Column -->
-      <div class="col-lg-6 d-flex align-items-center mb-5 mb-lg-0">
-        <img src="./photo/cook.png" alt="Image" class="img-fluid">
-      </div>
+      <div class="col-lg-6 d-flex justify-content-center align-items-center mb-4 mb-lg-0" style="padding: 0;">
+  <img src="./photo/secondord.png" alt="Image" class="img-fluid w-100" style="display: block;">
+</div>
     </div>
   </div>
 </section>
 
-<!-- Three-Box Kitchen Features -->
-<section class="masthead-about-cabriot" style="padding-top: 5rem; background-color:#ffffff;">
-  <div class="container px-4 px-md-5">
-    <div class="row gx-4 gy-4 align-items-stretch">
+<!-- Kitchen Boxes Section -->
+<section class="masthead-about-cabriot" style="padding-top:2rem; background-color:#ffffff;">
+  <div class="container px-3">
+    <div class="d-flex flex-column flex-lg-row justify-content-between align-items-stretch gap-4">
 
       <!-- Box 1 -->
-      <div class="col-12 col-md-6 col-lg-4 d-flex">
-        <div class="p-4 border border-dark rounded shadow-lg h-100 text-center bg-white w-100">
-          <img src="./photo/automatic kitchen.png" alt="" width="85px">
-          <h2 style="font-size:22px; font-weight:bold;" class="mt-3">Fully Automated Kitchen</h2>
-          <p>Packed with efficient and automated technology, Cabriot Kitchen is where precision meets passion.</p>
-        </div>
+      <div class="box-custom text-center p-4 border border-dark rounded shadow-lg bg-white">
+        <img src="./photo/automatic kitchen.png" alt="Automatic Kitchen" width="85px">
+        <h2 class="mt-3" style="font-size:22px; font-weight:bold;">Fully Automated Kitchen</h2>
+        <p>Packed with efficient and automated technology, Cabriot Kitchen is where precision meets passion.</p>
       </div>
 
       <!-- Box 2 -->
-      <div class="col-12 col-md-6 col-lg-4 d-flex">
-        <div class="p-4 border border-dark rounded shadow-lg h-100 text-center bg-white w-100">
-          <img src="./photo/hand.png" alt="" width="85px">
-          <h2 style="font-size:22px; font-weight:bold;" class="mt-3">Hygiene beyond borders</h2>
-          <p>Cabriot Kitchen prioritizes hygiene the most and upholds the highest standards to ensure the safety of our patrons.</p>
-        </div>
+      <div class="box-custom text-center p-4 border border-dark rounded shadow-lg bg-white">
+        <img src="./photo/hand.png" alt="Hygiene" width="85px">
+        <h2 class="mt-3" style="font-size:22px; font-weight:bold;">Hygiene beyond borders</h2>
+        <p>Cabriot Kitchen prioritizes hygiene the most and upholds the highest standards to ensure the safety of our patrons.</p>
       </div>
 
       <!-- Box 3 -->
-      <div class="col-12 col-md-6 col-lg-4 d-flex">
-        <div class="p-4 border border-dark rounded shadow-lg h-100 text-center bg-white w-100">
-          <img src="./photo/fuits.png" alt="" width="85px">
-          <h2 style="font-size:22px; font-weight:bold;" class="mt-3">Top Quality Ingredients</h2>
-          <p>Fresh and finest ingredients are the key to a fine dining experience and Cabriot kitchen constantly serves that freshness to you.</p>
-        </div>
+      <div class="box-custom text-center p-4 border border-dark rounded shadow-lg bg-white">
+        <img src="./photo/fuits.png" alt="Quality Ingredients" width="85px">
+        <h2 class="mt-3" style="font-size:22px; font-weight:bold;">Top Quality Ingredients</h2>
+        <p>Fresh and finest ingredients are the key to a fine dining experience and Cabriot kitchen constantly serves that freshness to you.</p>
       </div>
 
     </div>
   </div>
 </section>
-<section class="masthead-about-cabriot" style="padding-top: 5rem; background-color:#ffffff;">
-  <div class="container px-4 px-md-5 py-5">
-    <div class="row gx-5 align-items-center flex-column-reverse flex-lg-row">
+<!-- The Menu Section -->
+</section>
+<section class="masthead-about-cabriot" style="padding: 2rem 0; background-color:#ffffff;">
+  <div class="container px-3 px-md-5 py-2">
+    <div class="row gx-4 align-items-center flex-column-reverse flex-lg-row">
 
       <!-- Image Column -->
-      <div class="col-lg-6 d-flex align-items-center mb-4 mb-lg-0 mt-4">
-        <img src="./photo/menu.png" alt="Image" class="img-fluid" style="max-width: 100%; height: auto;">
-      </div>
+      <div class="col-lg-6 d-flex align-items-center mb-3 mb-lg-0 mt-3" style="padding-left: 12px; padding-right: 12px;">
+  <img src="./photo/menu.png" alt="Image" class="img-fluid w-100" style="display: block;">
+</div>
+
 
       <!-- Text Column -->
-      <div class="col-lg-6 mt-md-5">
+      <div class="col-lg-6 mt-md-4">
         <div class="mb-5">
-          <h2 class="text-success fw-bold" style="font-size: 40px;">The Menu</h2>
-
+          <h2 class="text-success fw-bold" style="font-size: 36px;">The Menu</h2>
           <h3 class="fs-1 fw-semibold text-success">Delight in Diversity</h3>
           <p class="text-dark" style="max-width: 90%;">
             Feel the heat of culinary excellence with a high-tech kitchen equipped with cutting-edge amenities at Cabriot Kitchen. It is the epicenter of innovation by our certified culinary experts who transform your meal into a masterpiece to savor.
@@ -286,49 +330,46 @@ aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
     </div>
   </div>
 </section>
-<!-- Menu Feature Cards -->
-<section class="masthead-about-cabriot" style="padding-top: 5rem; background-color:#ffffff;">
-  <div class="container px-4 px-md-5">
-    <div class="row gx-4 gy-4 align-items-stretch">
+
+<section class="masthead-about-cabriot" style="padding: 0rem 0; background-color:#ffffff;">
+  <div class="container px-3 px-md-5 py-2">
+    <div class="d-flex flex-column flex-lg-row justify-content-between align-items-stretch gap-4">
 
       <!-- Box 1 -->
-      <div class="col-12 col-md-6 col-lg-4 d-flex">
-        <div class="p-4 border border-dark rounded shadow-lg h-100 text-center bg-white w-100">
-          <img src="./photo/wide variety.png" alt="" width="85px">
-          <h2 style="font-size:24px; font-weight:bold;" class="mt-3">Wide Variety</h2>
-          <p>Enjoy a broad selection of dishes including veg, non-veg, North Indian, South Indian, Chinese, and more.</p>
-        </div>
+      <div class="box-custom text-center p-4 border border-dark rounded shadow-lg bg-white">
+        <img src="./photo/wide variety.png" alt="" width="85px">
+        <h2 style="font-size:24px; font-weight:bold;" class="mt-3">Wide Variety</h2>
+        <p>Enjoy a broad selection of dishes including veg, non-veg, North Indian, South Indian, Chinese, and more.</p>
       </div>
 
       <!-- Box 2 -->
-      <div class="col-12 col-md-6 col-lg-4 d-flex">
-        <div class="p-4 border border-dark rounded shadow-lg h-100 text-center bg-white w-100">
-          <img src="./photo/customizable choice.png" alt="" width="85px">
-          <h2 style="font-size:24px; font-weight:bold;" class="mt-3">Customizable Choices</h2>
-          <p>Tailor your meals according to your preferences, with the option to choose from different cuisines and dietary options.</p>
-        </div>
+      <div class="box-custom text-center p-4 border border-dark rounded shadow-lg bg-white">
+        <img src="./photo/customizable choice.png" alt="" width="85px">
+        <h2 style="font-size:24px; font-weight:bold;" class="mt-3">Customizable Choices</h2>
+        <p>Tailor your meals according to your preferences, with the option to choose from different cuisines and dietary options.</p>
       </div>
 
       <!-- Box 3 -->
-      <div class="col-12 col-md-6 col-lg-4 d-flex">
-        <div class="p-4 border border-dark rounded shadow-lg h-100 text-center bg-white w-100">
-          <img src="./photo/nutritional balance.png" alt="" width="85px">
-          <h2 style="font-size:24px; font-weight:bold;" class="mt-3">Nutritional Balance</h2>
-          <p>Every meal is crafted to provide a balanced diet, ensuring you get the right mix of nutrients and flavors.</p>
-        </div>
+      <div class="box-custom text-center p-4 border border-dark rounded shadow-lg bg-white">
+        <img src="./photo/nutritional balance.png" alt="" width="85px">
+        <h2 style="font-size:24px; font-weight:bold;" class="mt-3">Nutritional Balance</h2>
+        <p>Every meal is crafted to provide a balanced diet, ensuring you get the right mix of nutrients and flavors.</p>
       </div>
+
     </div>
   </div>
 </section>
-<!-- Chef Maestros Section -->
-<section class="masthead-about-cabriot" style="padding-top: 5rem; background-color:#ffffff;">
-  <div class="container px-4 px-md-5 py-5">
-    <div class="row gx-5 align-items-center flex-column-reverse flex-lg-row">
 
+<!-- Chef Maestros Section -->
+<section class="masthead-about-cabriot" style="padding-top: 2rem; background-color:#ffffff;">
+  <div class="container px-4 px-md-5 py-0">
+    <div class="row gx-5 align-items-center flex-column-reverse flex-lg-row">
       <!-- Image Column -->
-      <div class="col-lg-6 d-flex align-items-center mb-4 mb-lg-0 mt-4">
-        <img src="./photo/screen.png" alt="Image" class="img-fluid" style="max-width: 100%; height: auto;">
-      </div>
+      
+      <div class="col-lg-6 d-flex align-items-center mb-3 mb-lg-0 mt-3" style="padding: 0 10px;">
+  <img src="./photo/screen.png" alt="Image" class="img-fluid" style="max-width: 100%; height: auto;">
+</div>
+
 
       <!-- Text Column -->
       <div class="col-lg-6 mt-md-5">
@@ -342,24 +383,22 @@ aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
           </p>
         </div>
       </div>
-
     </div>
   </div>
 </section>
 
 <!-- Certification Section -->
-<section class="masthead-about-cabriot" style="padding-top: 5rem; background-color:#ffffff;">
-  <div class="container px-4 px-md-5 py-5">
+<section class="masthead-about-cabriot" style="padding-top: 1rem; background-color:#ffffff;">
+  <div class="container px-4 px-md-5 py-0">
     <div class="row gx-5 align-items-center flex-column-reverse flex-lg-row">
-
       <!-- Text Column -->
       <div class="col-lg-6">
-        <div class="mb-5 mt-0">
-          <h3 class="mb-4 fs-1 fw-semibold text-success">Certified Culinary Excellence</h3>
+        <div class="mb-0 mt-0">
+          <h3 class="mb-4 fs-1 fw-semibold text-success" style="margin-top: 27px;">Certified Culinary Excellence</h3>
           <p style="color:black; width:90%;">
             Immerse yourself in the artistry of flavors at Cabriot Kitchen, where each meal is expertly crafted and supported by recognized certifications, ensuring impeccable standards of hygiene and culinary excellence.
           </p>
-          <div class="d-flex flex-wrap gap-3 mt-4">
+          <div class="d-flex flex-wrap gap-3 mt-0">
             <img src="./photo/4.png" alt="" width="60" height="60">
             <img src="./photo/5.png" alt="" width="60" height="60">
             <img src="./photo/6.png" alt="" width="60" height="60">
@@ -368,92 +407,112 @@ aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
         </div>
       </div>
       <!-- Image Column -->
-      <div class="col-lg-6 d-flex align-items-center mb-5 mb-lg-0">
-        <img src="./photo/safe kitchen1.png" alt="Image" class="img-fluid">
-      </div>
+     <div class="col-lg-6 d-flex align-items-center mb-3 mb-lg-0 mt-3" style="padding: 0 10px;">
+  <img src="./photo/safe kitchen1.png" alt="Image" class="img-fluid">
+</div>
+
     </div>
   </div>
 </section>
-  <div class="container my-5">
-    <div class="row text-center">
-      <div class="container">
+
+ <div class="container my-5">
   <div class="row justify-content-center text-center">
-    <div class="col-12 col-md-10 col-lg-8"> 
-  <h3 class="fw-bold my-4" style="font-size: 2.5rem; background: linear-gradient(90deg, #ff6a00, #ee0979); -webkit-background-clip: text; color: transparent;">
+    <div class="col-12 col-md-10 col-lg-8">
+      <h3 class="fw-bold my-4" style="font-size: 2.5rem; background: linear-gradient(90deg, #ff6a00, #ee0979); -webkit-background-clip: text; color: transparent;">
         Get Started Today!
       </h3>
-
       <p class="lead">
-        Your culinary journey begins with us. Fill out the form <br class="d-none d-md-block">
-        and let's create something extraordinary together!
+        Your culinary journey begins with us. Fill out the form and let's create something extraordinary together!
       </p>
     </div>
   </div>
-</div
-  </div>
-  </div>
-  <div class="container my-5">
-    <form class="form">
-      <div class="row g-3">
-        <!-- Name -->
-        <div class="col-md-6">
-          <input type="text" class="form-control p-2" placeholder="Enter Your Name" required>
-        </div>
 
-        <!-- Phone Number -->
-        <div class="col-md-6">
-          <input type="tel" class="form-control p-2" placeholder="Enter Your Number" required>
-        </div>
+  <form class="form mx-auto" style="max-width: 800px;">
+    <div class="row g-2">
+      <!-- Name -->
+      <div class="col-md-6">
+        <input type="text" class="form-control fw-bold p-3" placeholder="Enter Your Name" required>
+      </div>
 
-        <!-- Email -->
-        <div class="col-md-6">
-          <input type="email" class="form-control p-2" placeholder="Email Address" required>
-        </div>
+      <!-- Phone Number -->
+      <div class="col-md-6">
+        <input type="tel" class="form-control fw-bold p-3" placeholder="Enter Your Number" required>
+      </div>
 
-        <!-- Location -->
-        <div class="col-md-6">
-          <input type="text" class="form-control p-2" placeholder="Location" required>
-        </div>
+      <!-- Email -->
+      <div class="col-md-6">
+        <input type="email" class="form-control fw-bold p-3" placeholder="Email Address" required>
+      </div>
 
-        <!-- Service Type Dropdown -->
-       <div class="col-md-6 p-2">
-  <select class="form-select" required>
-    <option value="">Select Type Of Service</option>
-    <option>Mess Service</option>
-    <option>Corporate Event</option>
-    <option>Private Event</option>
-    <option>Special Occasion (e.g., Wedding, Party)</option>
-    <option>Other</option>
-  </select>
+      <!-- Location -->
+      <div class="col-md-6">
+        <input type="text" class="form-control fw-bold p-3" placeholder="Location" required>
+      </div>
+
+      <!-- Service Type Dropdown -->
+      <div class="col-md-6">
+        <select class="form-select fw-bold p-3" required>
+          <option value="">Select Type Of Service</option>
+          <option>Mess Service</option>
+          <option>Corporate Event</option>
+          <option>Private Event</option>
+          <option>Special Occasion (e.g., Wedding, Party)</option>
+          <option>Other</option>
+        </select>
+      </div>
+
+      <!-- Number of Guests -->
+      <div class="col-md-6">
+  <input type="number" class="form-control fw-bold p-3" placeholder="Number of Guests" min="1" required>
+</div>
+      <!-- Message -->
+      <div class="col-12">
+        <textarea class="form-control fw-bold p-3" rows="4" placeholder="Enter your message..."></textarea>
+      </div>
+      <!-- Submit Button Centered -->
+     <div class="col-12 col-lg-4 d-flex justify-content-center mb-3 mt-4">
+  <button type="submit" class="btn btn-success custom-button py-2 px-3" style="width: 130px;">
+    Submit
+  </button>
 </div>
 
-        <!-- Number of Guests -->
-        <div class="col-md-6">
-          <input type="number" class="form-control p-2" placeholder="Number of Guests" required>
-        </div>
-
-        <!-- Message Full Width -->
-        <div class="col-12">
-      <textarea class="form-control" rows="4" placeholder="Enter your message..."></textarea>
     </div>
-
-        <!-- Submit Button -->
-        <div class="col-12 col-md-3 text-start">
-  <button type="submit" class="btn btn-success w-75 custom-button">Submit</button>
+  </form>
 </div>
+<!-- ===== FAULTER START ===== -->
+<footer class="bg-dark text-light pt-5">
+  <div class="container text-center">
+
+    <!-- 🔰 Centered Logo -->
+    <a href="#" class="text-decoration-none text-light fw-bold fs-4 d-inline-flex align-items-center mb-4">
+      <img src="./photo/cabriot.png" alt="Cabriot" width="50" height="50" class="me-2">
+      <h3>Cabriot Eats</h3></a>
+
+    <!-- 🔗 Two Columns Under Logo -->
+    <div class="row justify-content-center text-start">
+
+      <!-- 📄 Pages Column (Left) -->
+      <div class="col-12 col-md-4 mb-3">
+        <h6 class="fw-bold text-uppercase">Pages</h6>
+        <ul class="list-unstyled">
+          <li><a href="#" class="text-light text-decoration-none">Home</a></li>
+          <li><a href="#" class="text-light text-decoration-none">Eat</a></li>
+          <li><a href="#" class="text-light text-decoration-none">Contact</a></li>
+        </ul>
       </div>
-    </form>
-  </div>
-  <footer>
-    <div class="container my-5">
-      <div class="footer-box text-center">
-        <img src="./photo/cabriot.png" alt="Cabriot Logo" class="footer-logo">
-        <h3>CABRIOT VENTURES PRIVATE LIMITED</h3>
-        <h6>Door No : 64/2113, Nechikkadan Tower</h6>
-        <h6>Eranjipalam, Kozhikode 673006</h6>
-        <h6>© Cabriot 2024</h6>
-      </div>
+     <!-- 📞 Contact Column (Right) -->
+<div class="col-12 col-md-4 mb-3" style="margin-right: 10px;">
+  <h6 class="fw-bold text-uppercase">Contact Us</h6>
+  <p class="mb-1"><i class="fa-solid fa-phone me-2"></i> +91‑12345‑67890</p>
+  <p><i class="fa-solid fa-envelope me-2"></i> info@cabrioteats.com</p>
+</div>
     </div>
-  </footer>
+  </div>
+  <!-- 🔚 Footer Bottom -->
+  <div class="bg-secondary text-center text-light py-2 mt-3">
+    © 2025 Cabriot Eats. All rights reserved.
+  </div>
+</footer>
+<!-- ===== FOOTER END ===== -->
 </body>
 </html>

@@ -11,14 +11,13 @@
   border-radius:50%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 .navbar-toggler-icon{
   width:15px;
   height:20px ;
 }
 
-  
 .contact-btn {
   border-radius: 20px;
   padding: 6px 17px;
@@ -44,21 +43,24 @@
   width: 100%;
 }
 
-.inquire-btn {
-  background-color:#198754; /* Green */
-  color: white;
-  border: none;
-  padding: 12px 30px;
-  border-radius: 30px;
+  /* Default: Desktop View */
+  .inquire-btn {
+    width: 50%;
+  }
+
+  /* Mobile View (below 768px) */
+  @media (max-width: 767.98px) {
+    .inquire-btn {
+      width: 50%;
+    }
+  }
+  .custom-button {
+  padding: 10px 20px;
   font-weight: bold;
+  border-radius: 8px;
   font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
 }
 
-.inquire-btn:hover {
-  background-color: #198754; 
-}
 shadow-sm {
     box-shadow: rgba(0, 0, 0, 0.075) 0px 0.125rem 0.25rem !important;
 }
@@ -141,4 +143,75 @@ shadow-sm {
   .inquire{
   margin-top: 20px; 
 }
+@media (max-width: 767px) {
+  .masthead-about-cabriot {
+    padding-top: 1!important;
+    padding-bottom:2.3 !important;
+  }
 
+  .box-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    text-align:justify;
+  }
+
+  .box-card img {
+    max-width: 70px;
+    height: auto;
+  }
+
+  .row.align-items-stretch > div {
+    height: 100%;
+  }
+
+  .text-center.text-lg-start {
+    text-align: center !important;
+  }
+}
+@media (min-width: 992px) {
+    .col-lg-4 {
+        flex: 0 0 auto;
+        width: 64.33333333%;
+    }
+}
+
+  @media (min-width: 992px) {
+    .box-custom {
+      width: 33.3333%;
+    }
+  }
+  .box-custom {
+    width: 100%;
+  }
+@media (min-width: 992px) {
+    .col-lg-4 {
+        flex: 0 0 auto;
+        width: 96.333333%;
+    }
+ .box-custom {
+  transition: all 0.4s ease-in-out;
+  transform: scale(1);
+  background-color: #ffffff; /* Default white */
+}
+
+.box-custom:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(0, 128, 0, 0.3); /* Green glow */
+  border-color: #198754; /* Bootstrap success green */
+  background-color: #e6ffe6; /* Light green background on hover */
+}
+.box-custom {
+  transition: all 0.4s ease-in-out;
+  transform: scale(1);
+  background-color: #ffffff;
+}
+
+.box-custom:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(0, 128, 0, 0.3);
+  border-color: #198754;
+  background-color: #e6ffe6;
+}
